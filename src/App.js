@@ -13,11 +13,24 @@ const heading = (
     hi from jsx
   </h1>
 );
-console.log(heading);
 
 //React component
 //class based component
 //Functional component
+
+// const HeadingComponent2 = () => {
+//   <h1>short syntax</h1>;
+// };
+
+const title = <h1 className="title">Namamste reat using JSX</h1>;
+
+const HeadingComponent = () => (
+  <div id="container">
+    {title}
+    <h1>return syntax</h1>
+  </div>
+);
+
 // const AppLayout = () => {
 //   return (
 //     <div className="app">
@@ -27,6 +40,6 @@ console.log(heading);
 // };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(heading);
+root.render(<HeadingComponent />);
 
 // root.render(<AppLayout />);
