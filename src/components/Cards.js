@@ -1,3 +1,5 @@
+import { CDN_URL } from "../utils/constants";
+
 const styleCard = {
   backgroundColor: "	#B0C4DE",
 };
@@ -11,14 +13,7 @@ export const ResturantCard = (props) => {
     restData?.info;
   return (
     <div className="rest-card" style={styleCard}>
-      <img
-        className="res-logo"
-        alt="food"
-        src={
-          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/" +
-          cloudinaryImageId
-        }
-      />
+      <img className="res-logo" alt="food" src={CDN_URL + cloudinaryImageId} />
       <h3>{name}</h3>
       <p>{cuisines.join(",")} </p>
       <p>{avgRating} Stars</p>
