@@ -45,3 +45,15 @@ React Hooks are simple JavaScript functions that we can use to isolate the reusa
 ## why do we need useState hook?
 
 useState is React Hook that allows you to add state to a functional component. It returns an array with two values: the current state and a function to update it. The Hook takes an initial state value as an argument and returns an updated state value whenever the setter function is called.
+
+export const CDN_URL =
+'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/';
+
+export const SWIGGY_URL =
+'https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.8996676&lng=77.4826837&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING';
+
+export const RESTAURANT_URL =
+'https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.8996676&lng=77.4826837&restaurantId=626772&catalog_qa=undefined&submitAction=ENTER';
+
+export const MENU_URL =
+'https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.8996676&lng=77.4826837&restaurantId=';
