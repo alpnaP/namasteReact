@@ -423,3 +423,5 @@ const restList = [
 ];
 
 export default restList;
+
+// API:https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.5050906&lng=88.2935519&restaurantId=405178

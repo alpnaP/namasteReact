@@ -1,16 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import "../index.css";
 import { ResturantCard } from "./Cards";
 
 import restList from "../utils/mockData";
 
-export const Body = () => {
+export const Body = (list) => {
   //state variable- Super powerful variable
   const [listOfRestaurants, setListOfRestaurants] = useState(restList);
 
   //normal JS variable
   // let listOfRestaurantsJS = [];
+
+  debugger;
+  useEffect(() => {
+    fetchData();
+  }, [list]);
+
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.5050906&lng=88.2935519&restaurantId=405178"
+    );
+
+    console.log(data);
+
+    const json = await data.json();
+    console.log(json);
+
+    // setListOfRestaurants(json.data.cards);
+  };
+
   return (
     <div className="body">
       <div className="filter">
