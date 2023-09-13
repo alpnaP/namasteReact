@@ -17,7 +17,7 @@ export const ResturantCard = (props) => {
       <h3>{name}</h3>
       <p>{cuisines.join(",")} </p>
       <p>{avgRating} Stars</p>
-      <p>₹{costForTwo / 100} FOR TWO</p>
+      <p>{costForTwo}</p>
     </div>
   );
 };
