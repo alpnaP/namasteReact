@@ -54,3 +54,8 @@ reactfiber:https://github.com/acdlite/react-fiber-architecture
 How react is fast- react is doing efficient dom maipulation...it has virtual dom(represantaion of Original DOM)
 Diffing Algo- efficient dom manipulation will do
 Reconciliation
+
+# Two types od routing
+
+1. Client side routing
+2. Server side routing

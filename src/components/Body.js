@@ -3,8 +3,7 @@ import { useState, useEffect } from "react";
 import "../index.css";
 import { ResturantCard } from "./Cards";
 import { Shimmer } from "./Shimmer";
-
-import restList from "../utils/mockData";
+import { Link } from "react-router-dom";
 
 export const Body = () => {
   //state variable- Super powerful variable
@@ -25,7 +24,9 @@ export const Body = () => {
     );
 
     const json = await data.json();
-    console.log(json);
+    if (listOfRestaurants.length === 0) {
+      <Shimmer />;
+    }
 
     // Optional Chaining
     setListOfRestaurants(
@@ -37,18 +38,15 @@ export const Body = () => {
     );
   };
 
-  // //Conditional rendering not  a good practise
-  // if (listOfRestaurants.length === 0) {
-  //   return (
-  //     <h1>
-  //       <Shimmer />
-  //     </h1>
-  //   );
-  // }
+  const search = () => {
+    const filteredRestaurant = listOfRestaurants.filter((res) => {
+      return res.info.name.toLowerCase().includes(searchText.toLowerCase());
+    });
 
-  return listOfRestaurants.length === 0 ? (
-    <Shimmer />
-  ) : (
+    setFilteredRestaurant(filteredRestaurant);
+  };
+
+  return (
     <div className="body">
       <div className="filter">
         <div className="search">
@@ -61,17 +59,7 @@ export const Body = () => {
             }}
           />
 
-          <button
-            onClick={() => {
-              const filteredRestaurant = listOfRestaurants.filter(
-                res.info.name.toLowerCase().includes(searchText.toLowerCase())
-              );
-
-              setListOfRestaurants(filteredRestaurant);
-            }}
-          >
-            Search
-          </button>
+          <button onClick={() => search()}>Search</button>
         </div>
         <button
           className="filter-btn"
@@ -87,7 +75,12 @@ export const Body = () => {
       </div>
       <div className="res-name">
         {filteredRestaurant.map((restaurant) => (
-          <ResturantCard key={restaurant.info.id} restData={restaurant} />
+          <Link
+            key={restaurant.info.id}
+            to={"/restaurants/" + restaurant.info.id}
+          >
+            <ResturantCard restData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>
