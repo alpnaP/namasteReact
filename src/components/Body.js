@@ -4,6 +4,7 @@ import "../index.css";
 import { ResturantCard } from "./Cards";
 import { Shimmer } from "./Shimmer";
 import { Link } from "react-router-dom";
+//import { useOnlineStatus } from "../utils/useOnlineStatus";
 
 export const Body = () => {
   //state variable- Super powerful variable
@@ -45,6 +46,12 @@ export const Body = () => {
 
     setFilteredRestaurant(filteredRestaurant);
   };
+  // const onlineStatus = useOnlineStatus();
+
+  // if (onlineStatus === false)
+  //   return (
+  //     <h1>Look's like you're offline, please check your internet connection</h1>
+  //   );
 
   return (
     <div className="body">
