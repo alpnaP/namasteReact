@@ -13,24 +13,24 @@ export const Header = () => {
   //If something is there in DA , when the depency changes, that time it will call
 
   return (
-    <div className="header">
+    <div className="flex justify-between bg-gray-400 shadow m-2 ">
       <div>
-        <img className="food-logo" src={foodlogo} />
+        <img className="w-28" src={foodlogo} />
       </div>
-      <div className="nav-items">
-        <ul>
-          <li>
+      <div className="flex items-center">
+        <ul className="flex p-4 m-4">
+          <li className="px-4">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className="px-4">
             <Link to="/about-us">About Us</Link>
           </li>
-          <li>
+          <li className="px-4">
             <Link to="/contact-us">Conact Us</Link>
           </li>
-          <li>Carts</li>
+          <li className="px-4">Carts</li>
           <button
-            className="login"
+            className="login px-4"
             onClick={() => {
               setBtnNameReact("logout");
             }}
